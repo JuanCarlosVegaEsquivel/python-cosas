@@ -7,11 +7,11 @@ Este es un
 comentario de varias lineas
 """
 
-name = "Juan"        #Tipo de dato string
-edad = 20            #Tipo de dato entero
-altura = 1.75        #Tipo de dato float
-es_estudiante = True #Tipo de dato booleano
-nada = None          #Valor nulo
+name = "Juan"         #Tipo de dato string
+edad = 20             #Tipo de dato entero
+altura = 1.73         #Tipo de dato float
+es_estudiante = False #Tipo de dato booleano
+nada = None           #Valor nulo
 
 """
 Tipos Principales
@@ -20,7 +20,7 @@ Int: 5, -3, 1000                                         #Números enteros
 float: 3.14, -0.001, 2.0                                 #Números con decimales
 str: "Hola", 'Mundo', "123"                              #texto entre comillas
 bool: True, False                                        #Valores booleanos
-None: None                                               #Valor nulo
+None: None                                               #Valor nuloS
 list: [1, 2, 3], ["a", "b", "c"]                         #Colección ordenada y mutable
 dict: {"clave": "valor"}, {"nombre": "Juan", "edad": 20} #Colección de pares clave-valor
 
@@ -85,18 +85,18 @@ math.sqrt(16)  #4.0 (raiz cuadrada)
 math.pi        #3.141592653589793 (valor de pi)
 """
 
-saludo = "Hola Humano!"
+saludo = "Hola Humano"
 
-len(saludo) #11 (longitud)
-saludo.upper() #"HOLA HUMANO!" (mayusculas)
-saludo.lower() #"hola humano!" (minusculas)
-saludo.replace("Hola", "Adios") #"Adios Humano!" (reemplaza texto)
-saludo.split() #["Hola", "Humano!"] (lo divide en una lista)
+print(len(saludo)) #11 (longitud)
+print(saludo.upper()) #"HOLA HUMANO" (mayusculas)
+print(saludo.lower()) #"hola humano" (minusculas)
+print(saludo.replace("Hola", "Adios")) #"Adios Humano" (reemplaza texto)
+print(saludo.split()) #["Hola", "Humano"] (lo divide en una lista)
 
 # Acceder a caracterers por posicion (empiza en 0)
-saludo[0]   #"H"
-saludo[-1]  # "o" (ultimo caracter)
-saludo[0:4] # ["Hola"] (rebanada: del 0 al 4 sin incluir el 4)
+print(saludo[0])   #"H"
+print(saludo[-1])  # "o" (ultimo caracter)
+print(saludo[0:4]) # ["Hola"] (rebanada: del 0 al 4 sin incluir el 4)
 
 # Unir strings
 nombre = "Juan"
@@ -104,3 +104,17 @@ apellido = "Vega"
 completo = nombre + " " + apellido #"Juan Vega"
 print(completo)
 
+"""
+Condicionales: if, elif, else
+
+Sirven para que el programa tome decisiones. Fijarse en los dos puntos: y la identacion.
+"""
+
+edad = int(input("¿Cuántos años tienes? "))
+
+if edad < 18:
+    print("Menos de edad")
+elif edad < 65:
+    print("Eres adulto")
+else:
+    print("Eres adulto mayor")
