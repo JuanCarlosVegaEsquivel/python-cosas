@@ -118,3 +118,69 @@ elif edad < 65:
     print("Eres adulto")
 else:
     print("Eres adulto mayor")
+
+"""
+Operadores de comparación:(devuelven True o False)
+== (igual)
+!= (distinto)
+<  (menor)
+>  (mayor)
+<= (menor o igual)
+>= (mayor o igual)
+"""
+
+# Operadores logicos para combinar condiciones
+
+edad = 20
+tiene_licencia = True
+
+if edad >= 18 and tiene_licencia:
+    print("Puede conducir")
+if edad < 18 or not tiene_licencia:
+    print("No puede conducir")
+
+# and -> ambas deben ser verdadereas
+# or  -> al menos una debe ser verdadera
+# not -> invierte el valor (True a False, False a True)
+
+# BUCLES: REPETIR COSAS
+# while -- mientras se cumpla una condicion
+
+contador = 0
+while contador <5:
+    print(contador)
+    contador += 1 # Esto es importante para evitar un bucle infinito.
+
+# for -- recorrer una secuencia
+
+# Recorre un rango de numeros
+
+for i in range(5): # 0, 1, 2, 3, 4
+    print(i)
+    
+
+for i in range(1, 11): # 1, 2, ..., 10
+    print(i)
+
+for i in range(0, 20, 2): #del 0 al 18 de 2 en 2
+    print(i)
+
+# Recorrer una lista
+frutas = ["manzana", "pera", "banano"]
+for fruta in frutas:
+    print(fruta)
+
+    # Recorrer un string letra por letra
+for letra in "Python":
+    print(letra)
+
+# break -> sale del bucle inmediatamente
+# continue -> salta a la siguiente iteracion del bucle
+
+for i in range(10):
+    if i == 5:
+        break # se detiene al llegar a 5
+    if i % 2 == 0:
+        continue # se salta los numeros pares
+    print(i)
+
