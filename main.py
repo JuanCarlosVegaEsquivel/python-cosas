@@ -155,22 +155,26 @@ while contador <5:
 
 # Recorre un rango de numeros
 
+print("Numeros del 0 al 4:")
 for i in range(5): # 0, 1, 2, 3, 4
     print(i)
     
-
+print("Numeros del 1 al 10:")
 for i in range(1, 11): # 1, 2, ..., 10
     print(i)
 
+print("Numeros pares del 0 al 18:")
 for i in range(0, 20, 2): #del 0 al 18 de 2 en 2
     print(i)
 
 # Recorrer una lista
+print("Recorrer una lista:")
 frutas = ["manzana", "pera", "banano"]
 for fruta in frutas:
     print(fruta)
 
     # Recorrer un string letra por letra
+print("Recorrer un string letra por letra:")
 for letra in "Python":
     print(letra)
 
@@ -184,3 +188,92 @@ for i in range(10):
         continue # se salta los numeros pares
     print(i)
 
+# Listas: colecciones ordenadas
+
+numeros = [10, 20, 30, 40]
+mezclada = [1,"hola", True, 3.14]
+
+# Acceder por indice (empieza en 0)
+numeros[0]   # 10
+numeros[-1]  # 40 (ultimo elemento)
+
+# Modificar
+numeros[0] = 99 # numeros ahora es [99, 20, 30, 40]
+
+# Agregar o quitar
+numeros.append(50)     # agrega al final
+numeros.insert(0, 5)   # inserta en posicion 0
+numeros.remove(30)     # elimina el valor 30
+ultimo = numeros.pop() # quita y devuelve el ultimo
+
+# Otras operaciones utiles
+len(numeros)      # cantidad de elementos
+30 in numeros     # True o False
+numeros.sort()    # ordena la lista
+numeros.reverse() # invierte el orden
+
+"""
+Diccionarios: colecciones de pares clave-valor
+Hay que pensar que sea una agenda: una "clace"(key) que apunta a un "valor"(value).
+Se definen con llaves {} y los pares se separan por comas, la clave y el valor se separan por dos puntos.
+"""
+
+persona = {
+    "nombre": "Carlos",
+    "edad": 20,
+    "ciudad": "San Jose"
+}
+
+# Acceder
+persona["nombre"]  # Luis
+
+# Modificar o agregar
+persona["edad"] = 21          # Modificar edad
+persona["profesion"] = "ingeniero"
+
+# Eliminar
+del persona["ciudad"] 
+
+# Recorrer
+for clave, valor in persona.items():
+    print(f"{clave}: {valor}")
+
+# Comprobar si existe una clave
+if "nombre" in persona:
+    print("Tiene nombre")
+
+
+# Funciones: reutilizar codigo
+
+def saludar(nombre):
+    print(f"Hola, {nombre}!")
+
+saludar("Pedro")
+saludar("maria")
+
+#con valor de retorno
+
+def sumar(a, b):
+    return a + b
+resultado = sumar(3, 4)
+
+# Parametros con valor por defecto
+
+def saludar(nombre, saludo="Hola"):
+    print(f"{saludo}, {nombre}!")
+
+saludar("Ana") # Usa el saludo por defecto
+saludar("Ana", "Buenas")
+
+"""
+Manejo de Errores: try/except
+
+Aveces el codigo puede fallar (por ejemplo, si pides un numero y el usuario escribe texto).
+Para evitar que el programa se caiga, usas try/except:
+"""
+
+try:
+    edad = int(input("edad: "))
+    print(f"Tu edad es {edad}")
+except ValueError:
+    print("Eso no es un numero valido.")

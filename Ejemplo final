@@ -1,0 +1,32 @@
+"""
+Ejemplo de todo lo visto en python
+Un mini juego sobre adivinar un numero!
+@Vector
+"""
+
+import random
+
+def jugar():
+    numero_secreto = random.randint(1, 100)
+    intentos = 0
+
+    print("Adivina el numero entre 1 y 100")
+
+    while True:
+        try:
+            intento = int(input("Tu intento: "))
+        except ValueError:
+            print("Eso no es un numero valido.")
+            continue
+
+        intentos += 1
+
+        if intento < numero_secreto:
+            print("Mas alto")
+        elif intento > numero_secreto:
+            print("Mas bajo")
+        else:
+            print(f"Felicidades! Adivinaste el numero en {intentos} intentos.")
+            break
+jugar()
+        
