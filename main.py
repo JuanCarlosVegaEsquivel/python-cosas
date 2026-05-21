@@ -8,7 +8,7 @@ comentario de varias lineas
 """
 
 name = "Juan"         #Tipo de dato string
-edad = 20             #Tipo de dato entero
+edad = 20             #Tipo de dato entero (int)
 altura = 1.73         #Tipo de dato float
 es_estudiante = False #Tipo de dato booleano
 nada = None           #Valor nulo
@@ -48,7 +48,6 @@ print(f"Hola, {nombre}!")
 edad_input = input("¿Cuántos años tienes? ")  # Esto es string
 edad2 = int(edad_input)                       # Convertir el string a un entero
 print(f"En 5 años tendrás {edad2 + 5} años.") 
-
 """
 Operaciones matematicas:
 
@@ -65,7 +64,7 @@ potencia = 2 ** 3         # Resultado: 8   (2 elevado a la 3)
 contador = 0
 contador += 1  # Equivale a: contador = contador + 1
 contador -= 1
-contador*= 2
+contador *= 2
 contador /= 2
 
 print(f"El contador vale: {contador}")
