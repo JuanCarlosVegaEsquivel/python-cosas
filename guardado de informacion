@@ -1,0 +1,71 @@
+"""
+El concepto
+Todo lo que guardas en variables y listas vive en la memoria RAM, y la RAM se borra cuando el programa termina.
+Si quieres guardar informacion de forma permanente, necesitas guardarla en un archivo en tu disco duro.
+
+Hay 2 opciones:
+    1. Escribir (write): guardar datos en un archivo.
+    2. Leer (read): recuperar datos de un archivo.
+"""
+# La forma basica en Python
+
+# Escribir en un archivo:
+
+archivo = open("notas.txt", "w")  # "w" es para escribir (write)
+archivo.write("Hola, esto se guarda en el archivo")
+archivo.close()  # MUY importante: cerrar el archivo
+
+# ⚠️ Ojo importante con "w": el modo "w" borra todo lo que había antes en el archivo y escribe desde 0
+# Si quieres agregar sin borrar, usas "a" (append):
+
+archivo = open("notas.txt", "a") # "a" = append (agregar al final)
+archivo.write("\nOtra linea mas")
+archivo.close()
+
+# El \n es *un salto de linea*(para que cada cosa quede en su propia linea)
+
+
+# Leer un archivo:
+archivo = open("notas.txt", "r")  # "r" es para leer (read)
+contenido = archivo.read()
+archivo.close()
+print(contenido)
+
+# La forma recomendada: with
+"""
+Acordarse de hacer .close() siempre es molesto, y si tu programa falla antes de cerrarlo pueden pasar cosas raras
+Python tiene una forma mas elegante con la palabra with, que cierra el archivo automaticamente cuando termina:
+"""
+
+# Escribir
+with open("notas.txt", "w") as archivo:
+    archivo.write("Hola Mundo")
+# aqui ya se cerro solo, sin que hagas nada
+
+# leer
+with open("notas.txt", "r") as archivo:
+    contenido = archivo.read()
+print(f"\n{contenido}")
+
+# Siempre se usa de esta manera, Es mas segura y mas limpia.
+
+"""
+"r" = read (Lee. Falla si el archivo no existe)
+"w" = write (Escribe desde cero. Borra lo que había antes)
+"a" = append (Agrega al final.)
+"""
+
+"""
+Leer linea por linea
+
+A veces no quieres todo el texto de golpe, sino procesars cada linea.
+Puedes recorrer el archivo con un for:
+"""
+with open("notas.txt", "r") as archivo:
+    for linea in archivo:
+        print(linea)
+# Cada vuelta del for, linea es una linea del archivo.
+
+
+
+
