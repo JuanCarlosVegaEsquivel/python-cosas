@@ -66,6 +66,6 @@ with open("notas.txt", "r") as archivo:
         print(linea)
 # Cada vuelta del for, linea es una linea del archivo.
 
-
+# Espero que te haya servido la informacion!
 
 
