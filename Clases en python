@@ -1,0 +1,98 @@
+"""
+Que problema resuelven las clases?
+
+Quieres guardar informacion de varios perros en tu programa, sin clases es algo asi:
+
+perro1_nombre = "Rex"
+perro1_edad = 3
+perro1_raza = "Pastor Alemán"
+
+perro2_nombre = "Luna"
+perro2_edad = 5
+perro2_raza = "Labrador"
+
+perro3_nombre = "Toby"
+perro3_edad = 1
+perro3_raza = "Chihuahua"
+
+Con 3 perros se ve horrible, imaginate 100 perros!
+
+Aqui es donde entran las clases
+
+Que es una clase?
+
+    Una clase es como un molde o plantilla para crear cosas. Define:
+        ~ Que datos tiene esa cosa (se llaman atributos)
+        ~ Que accion puede hacer esa cosa (se llaman metodos, que son basicamente funciones pegadas a la clase).
+
+La analogia mas clasica: una clase es como el plano de una casa.
+El plano no es la casa, es la descripcion de como construir una.
+Con un solo plano puedes hacer muchas casas.
+
+Clase (el plano) -> Objeto (la casa construida)
+Perro            -> Jack, Luna, Lola
+
+Cada objeto construido a partir de una clase se llama una instancia.
+"""
+"""
+# Mi primera clase en Python
+
+class Perro:                                    # class Perro: Define la clase. por convencion empiezan con mayuscula.
+    def __init__(self, nombre, edad, raza):     # Se llama constructor, y es la que se ejecuta automaticamente cuando crear un objeto.
+        self.nombre = nombre                    # doble guion: bajo antes y despues de init son especiales de Python.
+        self.edad = edad                        # self:  significa "este objeto en particular".
+        self.raza = raza                        # Cuando tienes 3 perros, self le dice a Python -
+                                                # "estoy hablando del perro esepecifico con el que trabajo ahora mismo".
+
+    def ladrar(self):                           # Esto toma el parametro nombre y lo guarda dentro del objeto como self.nombre.
+        print(f"{self.nombre} dice: ¡Guau!")
+
+    def cumpleanios(self):                      # Un metodo simple para una funciuon dentro de una clase
+        self.edad += 1
+        print(f"{self.nombre} ahora tiene {self.edad} años.")
+"""
+"""
+Cuando escribes Perro("Rex", 3, "Pastor Alemán") Python autmoaticamente llama a __init__ y le pasa esos valores.
+self lo maneja en Python solo, tu no lo pasas.
+
+El resumen conceptual
+
+Clase            = El molde/plantilla           Ejemplo = class Perro
+Objeto/Instancia = Una cosa creada del molde    Ejemplo = rex = Perro(...)
+Atributo         = Un dato del objeto           Ejemplo = rex.nombre
+Metodo           = una accion del objeto        Ejemplo = rex.ladrar()
+__init__         = Constructor, se llama crear  Ejemplo = Se ejecuta automatico
+self             = "Este Objeto en aprticular"  Ejemplo = Siempre primer parametro
+"""
+
+# Ejemplo: Clase "Cuenta Bancaria"
+
+class CuentaBancaria:
+
+    def __init__(self, duenio, saldo_inicial):
+        self.duenio = duenio
+        self.saldo = saldo_inicial
+
+    def depositar(self, cantidad):
+        self.saldo += cantidad
+        print(f"Depositaste ${cantidad}. Saldo actual: ${self.saldo}")
+
+    def retirar(self, cantidad):
+        if cantidad > self.saldo:
+            print("Saldo insuficiente")
+        else:
+            self.saldo -= cantidad
+            print(f"Retiraste ₡{cantidad}. Saldo actual: ₡{self.saldo}")
+    
+    def ver_saldo(self):
+        print(f"Cuenta de {self.duenio}: ${self.saldo}")
+
+# Crear dos cuentas distintas
+cuenta_carlos = CuentaBancaria("Carlos", 10000)
+cuenta_ana = CuentaBancaria("Ana", 50000)
+
+# Cada una maneja sus propios datos
+cuenta_carlos.depositar(5000)     # Depositaste ₡5000. Saldo actual: ₡15000
+cuenta_ana.retirar(20000)         # Retiraste ₡20000. Saldo actual: ₡30000
+cuenta_carlos.ver_saldo()         # Cuenta de Carlos: ₡15000
+cuenta_ana.ver_saldo()            # Cuenta de Ana: ₡30000

@@ -1,6 +1,7 @@
 """
 Ejemplo de todo lo visto en python
 Un mini juego sobre adivinar un numero!
+Esta hecho en base a lo que se ve en main.py
 @Vector
 """
 
