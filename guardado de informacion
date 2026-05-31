@@ -66,6 +66,70 @@ with open("notas.txt", "r") as archivo:
         print(linea)
 # Cada vuelta del for, linea es una linea del archivo.
 
-# Espero que te haya servido la informacion!
+
+
+"""
+JSON
+
+Que es?
+JSON (javaScript Object Notation)
+Es un formato de archivo diseniado exactamente para guardar este tipo de datos.
+Se ve asi por dentro:
+"""
+[
+    {"nombre": "Carlos", "telefono": "8888-1234"},
+    {"nombre": "Ana", "telefono": "7777-5678"}
+]
+"""
+Es como escribir listas y diccionarios. Por eso a Python le sirver un monton!
+
+Funciones a saber:
+
+Python tiene un modulo llamado "json" que viene incluido( no hay que instalar nada):
+"""
+
+import json
+
+"""
+y para que funciones:
+
+json.dump() -> guardar
+"""
+
+with open("datos.json", "r") as archivo:
+    datos = json.load(archivo)
+
+print(datos["nombre"])    #Carlos
+
+"""
+Y eso es todo. dump guarda, load carga. No hay mas magia
+
+Un detalle util! [indent]
+
+Si abris el archivo .json despues de guardarlo con json.dump normal, se ve todo en una linea fea.
+Par que se vea bonito y legible, usas el parametro del "indent":
+"""
+with open("datos.json", "w") as archivo:
+    json.dump(datos, archivo, indent=4)
+
+# Asi se ve por dentro
+{
+    "nombre": "Carlos",
+    "edad": 25
+}
+
+"""
+El caso del archivo que no existe
+
+Si intentas leer un .json que todavia no existe, Python explota con "FileNotFoundError".
+ya lo viste antes. La solucion es la misma de siempre:
+"""
+try:
+    with open("datos.json", "r") as archivo:
+        datos = json.load(archivo)
+except FileNotFoundError:
+    datos = []   #si no existe, empieza con lista vacia
+
+
 
 
