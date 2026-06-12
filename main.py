@@ -35,6 +35,7 @@ print("¿Soy estudiante?", es_estudiante)
 print("Valor de nada:", nada)
 
 # f-strings (la forma moderna y recomendada de meter variables en texto):
+
 print(f"Me llamo {name} y tengo {edad} años.")
 # Tambien puedes hacer calculos adentro:
 print(f"El año que viene tendré {edad + 1} años.")
